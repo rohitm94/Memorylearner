@@ -145,10 +145,6 @@ int main(int argc, char* argv[])
 
 	}
 
-	
-
-
-
 	double write_bw_bits_per_sec = (num_of_feeds * thread_count * 256 ) / (1024 * 1024 * 1024 * run_time);	        //Bandwidth of write in Giga bits/second
 
 	// Bandwidth of write in Giga Bytes per second
@@ -188,20 +184,12 @@ int main(int argc, char* argv[])
 
 	}
 
-	//clock_end = system_clock::now();
-	//elapsed_time = clock_end - clock_start;
-	//run_time = elapsed_time.count();
-
-
 	double readwrite_bw_bits_per_sec = (num_of_feeds * thread_count * 256 ) / (1024 * 1024 * 1024 * run_time);	        //Bandwidth of read-write in Giga bits/second
 		
 	// Bandwidth of read-write in Giga Bytes per second
 	// dividing by 8 to convert into bytes/sec
 	double readwrite_bw_bytes_per_sec = readwrite_bw_bits_per_sec / 8;
 
-	
-
-	
 
 	cout << atoi(argv[1]) << "\t" << read_bw_bytes_per_sec << "\t\t" << write_bw_bytes_per_sec<< "\t\t" << readwrite_bw_bytes_per_sec;
 
@@ -209,7 +197,5 @@ int main(int argc, char* argv[])
 	_mm_free(copies);
 
 	cout << endl;
-
 	return 0;
-
 }
